@@ -1,4 +1,4 @@
-#Scaffold to generate applications SPA (React)
+# Scaffold to generate applications SPA (React)
 
 ## Dependencies
 
