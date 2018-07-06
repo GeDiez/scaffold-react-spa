@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import RouterApp from "./app/routes";
 
-import 'bulma/css/bulma.css';
+import './styles.css';
 
 class App extends Component {
   authUser() {
