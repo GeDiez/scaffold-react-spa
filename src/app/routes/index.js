@@ -1,13 +1,30 @@
 import { BrowserRouter as Router } from "react-router-dom";
+import { PrivateRoute, RouteWithSubRoutes } from "../helpers";
+import { ContainerLogin } from '../UI/containers';
 
 import React from 'react';
-import Post from './post';
+
+const routesSchema = [
+  {
+    path: '/login',
+    component: ContainerLogin,
+    //routes: [ {path: '/', component: Component, routes: [...routes]} ] //optional: routes nested
+  },
+  // {
+  //   path: '/post',
+  //   component: Post,
+  // }
+];
 
 const RouterApp = () => {
   return (
     <Router>
       <div>
-        <Post />
+        {
+          routesSchema.map(route =>
+            <RouteWithSubRoutes key={route.path} {...route} />
+          )
+        }
       </div>
     </Router>
   );
