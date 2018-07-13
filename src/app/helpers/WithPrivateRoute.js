@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
-export const PrivateRoute = ({redirectPath, isAuthenticated}) => ({ component: Component, ...rest }) => (
+const WithPrivateRoute = ({ redirectPath }) => ({ isAuthenticated, component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props =>
@@ -10,7 +10,7 @@ export const PrivateRoute = ({redirectPath, isAuthenticated}) => ({ component: C
       ) : (
         <Redirect
           to={{
-            pathname: {redirectPath},
+            pathname: redirectPath,
             state: { from: props.location }
           }}
         />
@@ -19,4 +19,4 @@ export const PrivateRoute = ({redirectPath, isAuthenticated}) => ({ component: C
   />
 );
 
-export default PrivateRoute;
+export default WithPrivateRoute;

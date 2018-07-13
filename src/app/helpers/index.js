@@ -1,7 +1,9 @@
-import PrivateRoute from './PrivateRoute';
+import WithPrivateRoute from './WithPrivateRoute';
 import RouteWithSubRoutes from './RouteWithSubRoutes';
+import Toggle from './Toggle';
 
 export {
-  PrivateRoute,
+  WithPrivateRoute,
   RouteWithSubRoutes,
-}
+  Toggle,
+};
